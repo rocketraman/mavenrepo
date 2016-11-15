@@ -1,0 +1,24 @@
+= Quick-n-dirty Personal Maven Repository
+
+For artifacts that are not available on Maven Central or other public location.
+
+== Deploy
+
+```
+mvn deploy:deploy-file -DgroupId=whatever -DartifactId=whatever -Dversion=x.x.x \
+  -Dpackaging=jar \
+  -Durl=file:/path/to/mavenrepo/releases \
+  -Dfile="artifact.jar"
+```
+
+To add sources and javadocs, add:
+
+```
+  -Dsources=sources.jar \
+  -Djavadoc=javadoc.jar
+```
+
+== Use
+
+Add repository URL: https://raw.github.com/rocketraman/mavenrepo/master/releases
+(or snapshots).
